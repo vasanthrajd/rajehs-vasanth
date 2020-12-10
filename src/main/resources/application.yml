@@ -36,7 +36,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://127.0.0.1:5432/db-careerin
     username: postgres
-    password: root@123
+    password: careerin@123
     initialization-mode: EMBEDDED
 
   jpa:
