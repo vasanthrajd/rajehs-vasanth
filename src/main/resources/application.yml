@@ -1,0 +1,51 @@
+
+app:
+  cache:
+    logoutToken:
+      maxSize: 1
+  jwt:
+    expiration: 86400
+    header: Authorization
+    header.prefix: 'Bearer '
+    secret: careerin
+  token:
+    email:
+      verification:
+        duration: 86400
+    password:
+      reset:
+        duration: 1800
+    refresh:
+      duration: 86400
+  velocity:
+    templates:
+      location: /templates/
+careerin:
+  web:
+    paths: /v2/api-docs/**,/api/auth/**,/v1/**,/swagger-ui.html
+server:
+  port: 8090
+  servlet:
+    context-path: /careerin
+springdoc:
+  api-docs:
+    enabled: true
+    path: '/careerin-api/v3/api-docs'
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/db-careerin
+    username: postgres
+    password: root@123
+    initialization-mode: EMBEDDED
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+application-description: ^project.description^
+application-version: ^project.version^
